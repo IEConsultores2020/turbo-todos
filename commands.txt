@@ -1,0 +1,89 @@
+$ rails new turbo-todos -c tailwind
+--Verify installations required to end of this command
+
+$rails tailwindcss:build from "."
+$ rails tailwindcss:install
+rails tailwindcss:build from "."
+
+
+--g
+$ rails new tguide -c tailwind -d=postgresql
+
+--problems with pg 
+https://github.com/ged/ruby-pg
+$sudo -u postgres -i
+# CREATE ROLE osboxes SUPERUSER LOGIN PASSWORD 'osboxes'
+
+
+$ cd turbo-todos/
+$ bin/dev
+$ rbenv local 3.1.2 
+$ bundle install
+$ bin/rails s
+$ rails g scaffold Todo title:string status:integer
+--g
+--Add devise
+$bundle add devise && rails g devise:install && rails g devise user
+View notes and apply
+
+$rails g controller pages home
+
+$rails g channel track
+
+$rails g stimulus track
+
+$ rails g scaffold Company name:string 
+$ rails g scaffold Branch name:string company:references user:references
+$ rails g scaffold Track code:string status:integer branch:references assigned:references owner:references
+
+$ rails g scaffold People email:string name:string citizenship:string nid:string  mobile:string branch:references 
+
+$rails db:reset #delete database
+$rails db:prepare 
+#Solve references to same table: https://www.sitepoint.com/community/t/referencing-the-same-model-twice-in-rails/254243/2
+#Solve the another side of relation
+https://stackoverflow.com/questions/2125440/activerecord-has-many-where-two-columns-in-table-a-are-primary-keys-in-table-b
+
+#g Video 2:30 a.m. and up https://www.youtube.com/watch?v=EpMWkX5t0dk
+
+Configure root.
+
+Modify index.html.erb
+Modify _todo.html.erb
+
+Modify _form.html.erb
+    Eliminate first line: , class: "contents"
+        add another code.
+
+create file create.turbo_stream.erb
+
+Modify controller, create.
+--At this moment we can create and view creation in same form.
+
+
+--Now edit.
+Modify file _todo.html.erb
+Refactor edit.thml.erb
+
+--Require field text and controll error same page.
+Modify model for field requested.
+Modify else of function create into the controller of todos
+
+--For update
+Modify function update from controller.
+
+
+--For delete, modify _todo.thml.erb
+Modify funcion delete in controller todo, adding the turbostream sentence
+
+--For change de status.
+Modify model to assign different status.
+
+Add item to _todo.html.erb
+
+
+---Next order by status.
+
+Add order to function index into controller 
+Modify index.html.erb
+Modify model for use a callback application record ... add after_update_commit
